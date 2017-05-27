@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Full Screen Scroll</title>
+	<link rel="stylesheet" type="text/css" href="css/nullterial.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/Nullterial.js"></script>
+</head>
+<script type="text/javascript">
+	window.onload=function() {
+		$(window).NScroll(
+		{
+			Scroll:["#pg1","#pg2","#pg3","#pg4"],
+			speed:1000,
+			easing:'easeOutQuart'
+		})
+		window.setTimeout(function()
+		{
+			$("#pg1>div").addClass("actv")
+		},300)
+		$(window).on(E_ON_SCROLL_COMPLETE,function(event,inx)
+		{
+			console.log(inx)
+			switch(inx)
+			{
+				case 0:
+					$("#pg1>div").addClass("actv")
+				break;
+				case 1:
+					$("#m1").animate({"opacity":"1"},1000,function()
+					{
+						$("#m2").animate({"opacity":"1"},1000,function()
+						{
+							$("#m3").animate({"opacity":"1"},1000)
+						})
+					})
+				break;
+				case 2:
+					$("#n2").animate({"margin-left":"0"},1000)
+				break;
+				case 3:
+					$("#Final").animate({"margin-top":"100px"},1000)
+				break;
+			}
+		});
+		$(window).on(E_ON_SCROLL_AWAY,function(event,inx)
+		{
+			switch(inx)
+			{
+				case 0:
+					$("#pg1>div").removeClass("actv")
+				break;
+				case 1:
+					$("#m3").animate({"opacity":"0"},1000,function()
+					{
+						$("#m2").animate({"opacity":"0"},1000,function()
+						{
+							$("#m1").animate({"opacity":"0"},1000)
+						})
+					})
+				break;
+				case 2:
+					$("#n2").animate({"margin-left":"100%"},1000)
+				break;
+				case 3:
+					$("#Final").animate({"margin-top":"0px"},1000)
+				break;
+			}
+		})
+	}
+</script>
+<style type="text/css">
+	html,body
+	{
+		width: 100%;
+		height: 100%;
+		overflow:hidden;
+		position: relative;
+	}
+	div
+	{
+		font-family: Roboto-Regular !important;
+	}
+	#pg1
+	{
+		top: 0px;
+		background: url(img/mtl6.jpg);
+		background-size: cover;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	#pg1 div
+	{
+		border:8px solid #fff;
+		font-size: 90px;
+		font-weight: bold;
+		padding: 20px;
+		color: #fff;
+		transform: rotateX(90deg);
+		opacity: 0;
+		-webkit-transition: cubic-bezier(.86,0,.31,1.94) 1s;
+		-moz-transition: cubic-bezier(.86,0,.31,1.94) 1s;
+		transition: cubic-bezier(.86,0,.31,1.94) 1s;
+	}
+	#pg2
+	{
+		background: url(img/mtl4.jpg);
+		background-size: cover;
+	}
+	#pg3
+	{
+		background: url(img/mtl3.jpg);
+		background-size: cover;
+	}
+	#pg4
+	{
+		background: url(img/mtl7.jpg);
+		background-size: cover;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	section
+	{
+		width: 100%;
+		height: 100%;
+		position: relative
+	}
+	.actv
+	{
+		transform: rotateX(0deg) !important;
+		opacity: 1 !important;
+	}
+	#pg2 div
+	{
+		margin:0 auto; 
+	}
+	.t1
+	{
+		color: #fff;
+		font-size: 25px;
+		padding-top:  30px;
+		height: auto;
+		text-align: center;
+	}
+	#m1,#m2,#m3
+	{
+		width: 70%;
+		font-size:70px;
+		color: #fff;
+		padding-top: 7%;
+		font-weight: bold;
+		opacity: 0;
+	}
+	#m2
+	{
+		text-align: right;
+	}
+	#n1,#n2
+	{
+		color: #fff;
+		font-size: 80px;
+		font-weight: bold;
+		display: block;
+		width: 100%;
+		text-align: center;
+
+	}
+	#n1
+	{
+		padding-top: 15%;
+	}
+	#n2
+	{
+		margin-left: 100%;
+	}
+	#Final
+	{
+		border:8px solid #fff;
+		font-size: 60px;
+		font-weight: bold;
+		padding: 20px;
+		color: #fff;
+		margin-top: 0px;
+	}
+</style>
+<body>
+	<section id="pg1">
+		<div>Nullterial Scroll</div>
+	</section>
+	<section id="pg2">
+		<div class="t1">With NScroll Your website will be ......</div>
+		<div id="m1">Materializable</div>
+		<div id="m2">Focusable</div>
+		<div id="m3">And Morden</div>
+	</section>
+	<section id="pg3">
+		<div id="n1">The Third Page of NScroll</div>
+		<div id="n2">With Callback Animation</div>
+	</section>
+	<section id="pg4">
+		<div id="Final">
+			NScroll - Scroll to the Future
+		</div>
+	</section>
+</body>
+</html>

@@ -1,0 +1,88 @@
+.btn1
+{
+	color: #fff;
+	font-size: 15px;
+	background-color: #3F51B5;
+}
+.btn2
+{
+	color: #fff;
+	font-size: 15px;
+	background-color: #035F88;
+}
+.container
+{
+	width: 65%;
+	margin: 0 auto;
+	margin-top: 5%;
+}
+.card1
+{
+	background:url(../img/mtl.png);
+	width: 100%;
+	height: 300px;
+}
+.maincard
+{
+	width: 100%;
+	height: 300px;
+	background:url(../img/mtl2.jpg) no-repeat;
+	background-size: 100% 100%;
+}
+.rb
+{
+	right: 100px;
+	background-color:#FF4081;
+	text-align: center;
+	color: #fff;
+	font-size: 30px;
+
+}
+.rb2
+{
+	right: 100px;
+	text-align: center;
+	color: #fff;
+	font-size: 30px;
+	background-color: #757575;
+}
+.mdt
+{
+	position: absolute;
+	bottom: 20px;
+	color: #fff;
+}
+.mdlc
+{
+	margin:0 auto;
+	margin-top: 30px;
+	width: 90%;
+	margin-bottom: 5%;
+}
+.lstH
+{
+	padding: 24px;
+}
+xmp
+{
+	display: block;
+	font-size: 15px;
+	line-height: 20px;
+	word-break: break-all;
+	word-wrap: break-word;
+	overflow-x: auto;
+}
+xmp>span
+{
+	font-family: Menlo,Monaco,Consolas,"Courier New",monospace !important;
+}
+.explan
+{
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+.explan span
+{
+	font-family: Menlo,Monaco,Consolas,"Courier New",monospace !important;
+}

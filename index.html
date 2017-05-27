@@ -1,0 +1,722 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/nullterial.css">
+	<!-- 
+		Import Luna Theme (Night dark theme) 
+		** Make sure it has been imported beyond nullterial.css and 
+		** before your custom style sheet (If you want to apply your own style)
+	-->
+	<!-- <link rel="stylesheet" type="text/css" href="theme/Luna.css"> -->
+	<!-- 
+		Import Celestia Theme (Day light theme) 
+		** Make sure it has been imported beyond nullterial.css and 
+		** before your custom style sheet (If you want to apply your own style)
+	-->
+	<!-- <link rel="stylesheet" type="text/css" href="theme/Celestia.css"> -->
+	<!-- Custom and micro justification style sheet for the page-->
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/Nullterial.js"></script>
+	<script type="text/javascript" src="js/run_prettify.js"></script>
+</head>
+<script type="text/javascript">
+	window.onload=function(){
+		initMaterial();
+		setupTitleBar();
+		Implement();
+	}
+	function Implement()
+	{
+		$(".MD-ListContainer").on(E_ON_EXPANED,function(event,invoker){
+			$("#detail").html("");
+			window.setTimeout(function(){
+				$("#detail").html("233<br>Test information<br>332<br>233<br>Test information<br>332<br>233<br>Test information<br>332<br>");
+				$(invoker).children("div[class*='material-progress']").css("display","none");
+				//alert($("#selectMD").selectedItem())
+			},3000);
+		});
+		$("#selectMD").on(E_ON_MSELECT_CHANGE,function(event,invoker,selected)
+		{
+			//alert(selected);
+		})
+		$("#openmenu").click(function(){
+			$("#menu").toggleSlide();
+		})
+		$("#mdsw1,#mdsw2,#mdsw3").on(E_ON_MSWITCH_CHANGE,function(event,status)
+		{
+			$(this)
+				.parent()
+					.children("span:eq(0)")
+						.children("span")
+							.html(status?"on":"off")
+		})
+		$("#popup_dia,#popup_dia_ntitle").on(E_ON_MSDIALG_NEG,function()
+        {
+            $(this).toggleDialogViewable();
+        })
+	}
+</script>
+<body class="material material-view">
+	<div class="material-tbar mt-amin ripple">
+		<div class="material-h mt-padding"> Nullterial - Way to Future</div>
+	</div>
+	<div class="material-card maincard md-head">
+		<div class="material-h mt-txt-shadow mdt">Nullterial - Way to Future</div>
+		<div class="material-roundButton mt-rdbtn-bottom rb" data-msg="Download Nullterial.css">
+			<span class="mtic mtic-case-download"></span>
+		</div>
+	</div>
+	<div class="material-card container shadow-b-2p phscreen">
+		<div class="material-card material-h material-underline">
+			Icons in Nullterial
+		</div>
+		<div class="material-card mt-padding">
+			The Icons used in Nullterial is native Google Material Design Icons which design by Google.<br>
+			And also community design as additional<br>
+			Immigrate by Sergey Kupletsky who immigrate the icon into Fonts and combine into CSS.<br>
+			Modified by Lunaixsky.<br>
+			<!---->
+		</div>
+		<div class="material-card mt-padding material-topline" style="text-align: center;">
+			<a class="material-btn ripple btn2 shadow-b-2p" href="mtico.html">
+				Get Start With Nullterial Icons !
+			</a>
+		</div>
+		<div class="material-card mt-padding material-topline">
+			<a style="text-decoration: none;color: #000;display: flex;" href="http://google.github.io/material-design-icons/">
+				<span class="mtic mtic-google" style="font-size: 30px;margin-right: 5px"></span>
+				<span style="margin-top: 4px;">Material Icons project (Google Offical)</span>
+			</a>
+			<a style="margin-top:15px;text-decoration: none;color: #000; display: flex;" href="https://github.com/zavoloklom/material-design-iconic-font">
+				<span class="mtic mtic-github" style="font-size: 30px;margin-right: 5px"></span>
+				<span style="margin-top: 4px;">Material Icons Fonts project (Sergey Kupletsky)</span>
+			</a>
+		</div>
+	</div>
+	<div class="material-card shadow-b-2p container phscreen">
+		<div class="material-card material-h material-underline">Material Demo</div>
+		<div class="material-card mt-padding">
+			<div class="material-btn btn1 ripple shadow-b-2p">Material Button 1</div>	
+			<div class="material-btn btn1 ripple shadow-b-2p">Material Button 2</div>
+		</div>
+		<div class="material-card mt-padding material-topline">
+			<input type="text" name="i1" class="material-input">
+		</div>
+		<div class="material-card mt-top-nonradius mt-bottom-nonradius card1"></div>
+	</div>
+
+	<div class="material-card shadow-b-2p container phscreen" id="Spinner">
+		<div class="material-card material-h">Material Progressbar - Spinner</div>
+		<div class="mt-padding material-underline">
+			<svg class="material-spinner" width="128px" height="128px" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+			<circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="70" cy="70" r="64"></circle>
+			</svg>
+			<svg class="material-spinner" width="64px" height="64px" viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg">
+				<circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="35" cy="35" r="32"></circle>
+			</svg>
+			<svg class="material-spinner" width="32px" height="32px" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+				<circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="20" cy="20" r="16"></circle>
+			</svg>
+			<div style="width: 100%;display: flex;">
+				<p style="width:128px;text-align: center;">128px</p>
+				<p style="width: 64px;text-align: center;">64px</p>
+				<p style="width: 32px;text-align: center;margin-left: 10px">32px</p>
+			</div>
+		</div>
+		<div class="material-h3 material-topline" id="spinner_usage128">
+			Usage for 128px size
+		</div>
+		<div class="mt-padding-thin">
+			<div class="material-card mt-padding-thin" style="background-color: rgba(0,0,0,.5);">
+				<xmp class="prettyprint" style="padding: 0;"><svg class="material-spinner" width="128px" height="128px" viewBox="0 0 140 140">
+  <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="70" cy="70" r="64">
+  </circle>
+</svg></xmp>
+			</div>
+		</div>
+		<div class="material-h3 material-topline" id="spinner_usage64">
+			Usage for 64px size
+		</div>
+		<div class="mt-padding-thin">
+			<div class="material-card mt-padding-thin" style="background-color: rgba(0,0,0,.5);">
+				<xmp class="prettyprint"><svg class="material-spinner" width="64px" height="64px" viewBox="0 0 70 70">
+  <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="35" cy="35" r="32">
+  </circle>
+</svg></xmp>
+			</div>
+		</div>
+		<div class="material-h3 material-topline" id="spinner_usage32">
+			Usage for 32px size
+		</div>
+		<div class="mt-padding-thin">
+			<div class="material-card mt-padding-thin" style="background-color: rgba(0,0,0,.5);">
+				<xmp class="prettyprint"><svg class="material-spinner" width="32px" height="32px" viewBox="0 0 40 40">
+  <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="20" cy="20" r="16">
+  </circle>
+</svg></xmp>
+			</div>
+		</div>
+	</div>
+
+	<div class="material-card shadow-b-2p container phscreen" id="Horizontal">
+		<div class="material-card material-h material-underline">Material Progressbar - Horizontal Progressbar</div>
+		<div class="material-card material-h3">Indetermination Progressbar</div>
+		<div class="mt-padding">
+			<div class="material-progress">
+				<div class="indet"></div>
+			</div>
+		</div>
+		<div class="material-card material-h3">Determination Progressbar</div>
+		<div class="mt-padding">
+			<div class="material-progress">
+				<div class="det" style="width: 50%"></div>
+			</div>
+		</div>
+		<div class="material-h3 material-topline" id="Indetermination">
+			Usage for Indetermination Progressbar
+		</div>
+		<div class="mt-padding-thin">
+			<div class="material-card mt-padding-thin" style="background-color: rgba(0,0,0,.5);">
+				<xmp class="prettyprint"><div class="material-progress">
+  <div class="indet"></div>
+</div></xmp>
+			</div>
+		</div>
+		<div class="material-h3 material-topline" id="Determination">
+			Usage for Determination Progressbar
+		</div>
+		<div class="mt-padding-thin">
+			<div class="material-card mt-padding-thin" style="background-color: rgba(0,0,0,.5);">
+				<xmp class="prettyprint"><div class="material-progress">
+  <div class="det" style="width : <!--Your value in percentage-->">
+  </div>
+</div></xmp>
+			</div>
+		</div>
+	</div>
+
+	<div class="material-card shadow-b-2p container phscreen" id="Dropdown">
+		<div class="material-h material-card">
+			Material Dropdown Box
+		</div>
+		<div class="material-card mt-padding">
+			<div class="mt-dropbox-shell material-dropbox" id="selectMD" tabindex="-1">
+				<div class="mt-dropCtn ripple">
+					<span data-val="">Item1</span>
+					<span class="material-caret"></span>
+				</div>
+				<div class="material-dropbox-list shadow-b-2p mt-amin">
+					<div value="i1">Item1</div>
+					<div value="i2">material-dropbox-list</div>
+					<div value="i3">Item3</div>
+					<div value="i4">MD-ListContainer</div>
+				</div>
+			</div>
+		</div>
+		<div class="material-h3 material-topline" id="dropbox_u">
+			Usage for Material Dropdown Box
+		</div>
+		<div class="mt-padding-thin">
+			<div class="material-card mt-padding-thin" style="background-color: rgba(0,0,0,.5);">
+				<xmp class="prettyprint"><div class="mt-dropbox-shell material-dropbox" id="selectMD" tabindex="-1">
+  <div class="mt-dropCtn ripple">
+    <span data-val="">Item1</span>
+    <span class="material-caret"></span>
+  </div>
+  <div class="material-dropbox-list shadow-b-2p mt-amin">
+    <div value="i1">Item1</div>
+    <div value="i2">material-dropbox-list</div>
+    <div value="i3">Item3</div>
+    <div value="i4">MD-ListContainer</div>
+  <div>
+</div></xmp>
+			</div>
+		</div>
+		<div class="material-h3 material-card material-topline">
+			Javascript Event for Dropdown Box
+		</div>
+		<div class="mt-padding-thin">
+			<div class="material-card mt-padding-thin" style="background-color: rgba(0,0,0,.5);">
+				<xmp class="prettyprint">$("#selectMD").on(E_ON_MSELECT_CHANGE,function(event,invoker,selected)
+{
+  /* Put your code Here */
+})</xmp>
+			</div>
+		</div>
+		<div class="material-h3 material-card">
+			Keyword Explanation
+		</div>
+		<div class="material-card mt-padding">
+			<div class="explan">
+				<span style="color:#660066">E_ON_MSELECT_CHANGE</span>
+				<span>Event constant</span>
+			</div>
+			<div class="explan">
+				<span style="color:#660066">event</span>
+				<span>Body of the event</span>
+			</div>
+			<div class="explan">
+				<span style="color:#660066">invoker</span>
+				<span>Elemen body who fire this event</span>
+			</div>
+			<div class="explan">
+				<span style="color:#660066">selected</span>
+				<span>Value of the selected item</span>
+			</div>
+		</div>
+		<div class="material-h3 material-card material-topline">
+			Extended jQuery Method for Dropdown Box
+		</div>
+		<div class="mt-padding-thin">
+			<div class="material-card mt-padding-thin" style="background-color: rgba(0,0,0,.5);">
+				<xmp class="prettyprint">$("selectMD").selectedItem()</xmp>
+			</div>
+		</div>
+		<div class="material-h3 material-card">
+			Keyword Explanation
+		</div>
+		<div class="material-card mt-padding">
+			<div class="explan">
+				<span style="color:#660066">$obj.selectedItem()</span>
+				<span>Selected value of <span style="padding: 2px;background-color: rgba(0,0,0,.1);">$obj</span></span>
+			</div>
+		</div>
+	</div>
+
+	<div class="material-card shadow-b-2p container phscreen" id="dialog">
+		<div class="material-h material-card">
+			Material Dialog
+		</div>
+		<div class="material-card mt-padding">
+			<div class="material-dialog mt-dia-shownout-fix">
+				<div class="material-h material-title material-card mt-padding">
+					Material Dialog Title
+				</div>
+				<div class="material-dia-ctn material-h3 material-card mt-padding">
+				Here is the content in Material Dialog<br>
+				You can replace it with your own content even HTML.
+				</div>
+				<div class="material-dia-foot material-card mt-padding">
+					<a class="material-dia-foot-btn ripple">
+						AGREE
+					</a>
+					<a class="material-dia-foot-btn ripple">
+						DISAGREE
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="material-h3 material-card">
+			Launch a hidden dialog
+		</div>
+		<div class="material-card mt-padding">
+			<div class="material-btn ripple btn1" style="margin: 0 auto !important" data-mtltgl="mtdialog" data-tge="#popup_dia" data-msg="This is Toast">Launch Dialog</div>
+			<div class="material-btn ripple btn1" style="margin: 0 auto !important" data-mtltgl="mtdialog" data-tge="#popup_dia_ntitle" data-msg="This is Toast">Launch Dialog Without Title</div>
+		</div>
+		<div class="material-dialog" id="popup_dia">
+			<div class="material-h material-title material-card mt-padding">
+				Material Dialog Title
+			</div>
+			<div class="material-dia-ctn material-h3 material-card mt-padding">
+				A poped up dialog !<br>
+				Here is the content in Material Dialog<br>
+				You can replace it with your own content even HTML.
+			</div>
+			<div class="material-dia-foot material-card mt-padding">
+				<a class="material-dia-foot-btn ripple" data-mtltgl="dia_negative">
+					CANCLE
+				</a>
+				<a class="material-dia-foot-btn ripple">
+					GOT IT
+				</a>
+			</div>
+		</div>
+		<div class="material-h3 material-card material-topline">
+			Usage of Material Dialog.
+		</div>
+		<div class="mt-padding-thin">
+			<div class="material-card mt-padding-thin" style="background-color: rgba(0,0,0,.5);">
+				<xmp class="prettyprint"><div class="material-btn ripple btn1" data-mtltgl="mtdialog" data-tge="#popup_dia">Launch Dialog</div>
+
+
+<div class="material-dialog" id="popup_dia">
+  <div class="material-h material-title material-card mt-padding">
+    Material Dialog Title
+  </div>
+  <div class="material-dia-ctn material-h3 material-card mt-padding">
+    A poped up dialog !<br>
+    Here is the content in Material Dialog<br>
+    You can replace it with your own content even HTML.
+  </div>
+  <div class="material-dia-foot material-card mt-padding">
+    <a class="material-dia-foot-btn ripple" data-mtltgl="dia_negative">
+      CANCLE
+    </a>
+    <a class="material-dia-foot-btn ripple">
+      GOT IT
+    </a>
+  </div>
+</div>
+
+<!-- Add the mask layer for best presentation-->
+<div class="mt-overlay mt-amin">
+</div>
+</xmp>
+</div>
+</div>
+	<div class="material-h3 material-card material-topline">
+			Javascript Event for Dialog
+	</div>
+	<div class="mt-padding-thin">
+		<div class="material-card mt-padding-thin" style="background-color: rgba(0,0,0,.5);">
+			<xmp class="prettyprint">$("#popup_dia").on(E_ON_MSDIALG_POS,function()
+{
+  /* On Material Dialog Positive Button Click Event */
+  /* Put your code Here */
+})</xmp>
+		</div>
+	</div>
+	<div class="mt-padding-thin">
+		<div class="material-card mt-padding-thin" style="background-color: rgba(0,0,0,.5);">
+			<xmp class="prettyprint">$("#popup_dia").on(E_ON_MSDIALG_NEG,function()
+{
+  /* On Material Dialog Negative Button Click Event */
+  /* Put your code Here */
+})</xmp>
+		</div>
+	</div>
+		<div class="material-h3 material-card">
+			Keyword Explanation
+		</div>
+		<div class="material-card mt-padding">
+			<div class="explan">
+				<span style="color:#660066">E_ON_MSDIALG_NEG</span>
+				<span>Event constant</span>
+			</div>
+			<div class="explan">
+				<span style="color:#660066">E_ON_MSDIALG_POS</span>
+				<span>Event constant</span>
+			</div>
+		</div>
+		<div class="material-h3 material-card material-topline">
+			Extended jQuery Method for Dialog
+		</div>
+		<div class="mt-padding-thin">
+			<div class="material-card mt-padding-thin" style="background-color: rgba(0,0,0,.5);">
+				<xmp class="prettyprint">$("popup_dia").toggleDialogViewable()</xmp>
+			</div>
+		</div>
+		<div class="material-h3 material-card">
+			Keyword Explanation
+		</div>
+		<div class="material-card mt-padding">
+			<div class="explan">
+				<span style="color:#660066">toggleDialogViewable</span>
+				<span>Show or hide the dialog</span>
+			</div>
+		</div>
+		<div class="material-dialog" id="popup_dia_ntitle">
+			<div class="material-dia-ctn material-h3 material-card mt-padding">
+				A poped up a dialog without title !<br>
+				Here is the content in Material Dialog<br>
+				You can replace it with your own content even HTML.<br>
+				It can also create a dialog without footer,just remove the element which has class 'material-foot'.
+				<br>Non-foot dialog is not recommended except Non-title dialog.
+			</div>
+			<div class="material-dia-foot material-card mt-padding">
+				<a class="material-dia-foot-btn ripple" data-mtltgl="dia_negative">
+					CANCLE
+				</a>
+				<a class="material-dia-foot-btn ripple">
+					GOT IT
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="material-card shadow-b-2p container phscreen" id="dialog">
+		<div class="material-h material-card material-underline">
+			Material Switcher
+		</div>
+		<div class="material-card mt-padding" style="display: flex;justify-content: space-between">
+			<span>The Material switcher is now <span>off</span></span>
+			<span class="material-switch" id="mdsw1"><b></b></span>
+		</div>
+		<div class="material-card mt-padding" style="display: flex;justify-content: space-between">
+			<span>The Material switcher is now <span>off</span></span>
+			<span class="material-switch" id="mdsw2"><b></b></span>
+		</div>
+		<div class="material-card mt-padding" style="display: flex;justify-content: space-between">
+			<span>The Material switcher is now <span>off</span></span>
+			<span class="material-switch" id="mdsw3"><b></b></span>
+		</div>
+		<div class="material-h3 material-card material-topline">
+			Usage of Material Switcher.
+		</div>
+		<div class="mt-padding-thin">
+			<div class="material-card mt-padding-thin" style="background-color: rgba(0,0,0,.5);">
+				<xmp class="prettyprint"><!-- Attention please! tag 'b' must be present -->
+<span class="material-switch" id="mdsw1"><b></b></span></xmp>
+			</div>
+		</div>
+		<div class="material-h3 material-card material-topline">
+			Javascript Event for Switcher
+		</div>
+		<div class="mt-padding-thin">
+			<div class="material-card mt-padding-thin" style="background-color: rgba(0,0,0,.5);">
+				<xmp class="prettyprint">$("#mdsw1").on(E_ON_MSWITCH_CHANGE,function(event,status)
+{
+  /*Your code here*/
+})</xmp>
+			</div>
+		</div>
+		<div class="material-h3 material-card">
+			Keyword Explanation
+		</div>
+		<div class="material-card mt-padding">
+			<div class="explan">
+				<span style="color:#660066">E_ON_MSWITCH_CHANGE</span>
+				<span>Event constant</span>
+			</div>
+			<div class="explan">
+				<span style="color:#660066">event</span>
+				<span>Body of the event</span>
+			</div>
+			<div class="explan">
+				<span style="color:#660066">status</span>
+				<span>Stauts of switcher (boolean)</span>
+			</div>
+		</div>
+		<div class="material-h3 material-card material-topline">
+			Extended jQuery Method for Dropdown Box
+		</div>
+		<div class="mt-padding-thin">
+			<div class="material-card mt-padding-thin" style="background-color: rgba(0,0,0,.5);">
+				<xmp class="prettyprint">$("#mdsw1").Mtswitch(sw)</xmp>
+			</div>
+		</div>
+		<div class="material-h3 material-card">
+			Keyword Explanation
+		</div>
+		<div class="material-card mt-padding">
+			<div class="explan">
+				<span style="color:#660066">sw</span>
+				<span>Set select status in boolean,<br>null for returning status</span>
+			</div>
+		</div>
+	</div>
+
+	
+
+	<div class="material-card shadow-b-2p container phscreen">
+		<div class="material-card material-h material-underline">
+			Material Expansion Panel / List
+		</div>
+		<div class="MD-ListContainer mdlc">
+			<div class="material-ListItem mt-amin ripple" data-ripple-color="#DDD" tabindex="-1">
+				<div class="material-h lstH mt-amin">
+					Item 1
+				</div>
+				<div class="material-progress">
+					<div class="indet"></div>
+				</div>
+				<div class="MD-ItemView material-card material-topline mt-padding" id="detail">
+
+				</div>
+			</div>
+			<div class="material-ListItem mt-amin ripple" data-ripple-color="#DDD" tabindex="-1">
+				<div  class="material-h lstH mt-amin">
+					Item 2
+				</div>
+				<div class="material-progress">
+					<div class="indet"></div>
+				</div>
+			</div>
+			<div class="material-ListItem mt-amin ripple" data-ripple-color="#DDD" tabindex="-1">
+				<div  class="material-h lstH mt-amin">
+					Item 3
+				</div>
+			</div>
+			<div class="material-ListItem mt-amin ripple" data-ripple-color="#DDD" tabindex="-1">
+				<div  class="material-h lstH mt-amin">
+					Item 4
+				</div>
+			</div>
+		</div>
+		<div class="material-h3 material-card material-topline">
+			Usage for Expansion Panel / List
+		</div>
+		<div class="mt-padding-thin">
+			<div class="material-card mt-padding-thin" style="background-color: rgba(0,0,0,.5);">
+				<xmp class="prettyprint"><div class="MD-ListContainer mdlc">
+  <div class="material-ListItem mt-amin ripple" data-ripple-color="#DDD" tabindex="-1">
+    <div class="material-h lstH mt-amin">
+      Item 1
+    </div>
+
+    <!-- A Progressbar for Asyn data query when this panel are being expansion.-->
+    <!-- You can remove or keep it depend on your need.-->
+    <div class="material-progress">
+      <div class="indet"></div>
+    </div>
+    <div class="MD-ItemView material-card material-topline mt-padding" id="detail">
+      <!-- Here is the container for custom content -->
+    </div>
+  </div>
+
+  <!-- No Progress bar and custom container example -->
+  <!-- This just the example for showing pure panel. You can add them to meet your own need.-->
+  <div class="material-ListItem mt-amin ripple" data-ripple-color="#DDD" tabindex="-1">
+    <div  class="material-h lstH mt-amin">
+      Item 3
+    </div>
+  </div>
+</div></xmp>
+			</div>
+		</div>
+		<div class="material-h3 material-card material-topline">
+			Javascript Event for Switcher
+		</div>
+		<div class="mt-padding-thin">
+			<div class="material-card mt-padding-thin" style="background-color: rgba(0,0,0,.5);">
+				<xmp class="prettyprint">$(".MD-ListContainer").on(E_ON_EXPANED,function(event,invoker){
+    /* Your code here */			
+});</xmp>
+			</div>
+		</div>
+		<div class="material-h3 material-card">
+			Keyword Explanation
+		</div>
+		<div class="material-card mt-padding">
+			<div class="explan">
+				<span style="color:#660066">E_ON_EXPANED</span>
+				<span>Event constant</span>
+			</div>
+			<div class="explan">
+				<span style="color:#660066">event</span>
+				<span>Body of the event</span>
+			</div>
+			<div class="explan">
+				<span style="color:#660066">invoker</span>
+				<span>Element which fire this event</span>
+			</div>
+		</div>
+	</div>
+	<div class="mt-float-button">
+		<div class="material-roundButton rb" id="openmenu">
+			<span class="mtic mtic-widgets">
+			</span>
+		</div>
+	</div>
+
+	<div class="material-card container shadow-b-2p phscreen">
+		<div class="material-card material-h material-underline">
+			Nullterial Parallax Design - NParallax
+		</div>
+		<div class="material-card mt-padding">
+			Parallax Design are useful in the presentation of website. Make website readable and morden.
+			<br>Let give a insight of the future!
+			<!---->
+		</div>
+		<div class="material-card mt-padding material-topline" style="text-align: center;">
+			<a class="material-btn ripple btn2 shadow-b-2p" href="parallax.html">
+				Quick view of NParallax
+			</a>
+		</div>
+	</div>
+
+	<div class="material-footer">
+		<div class="material-roundButton rb2 mt-rdbtn-top" onclick="$('html, body').animate({ scrollTop: 0 },'slow');">
+			<span class="mtic mtic-chevron-up"></span>
+		</div>
+		<p class="material-h" style="font-weight: bold;color: rgba(0,0,0,.5);padding-top: 0px;padding-left: 30px;">Nullterial</p>
+		<p class="material-h3" style="font-weight: bold;color: rgba(0,0,0,.5);padding-top: 0px;padding-bottom: 0px;padding-left: 30px;">By <a href="http://lunaskytmp.tk/" style="text-decoration: none;color: rgba(0,0,0,.5);">Lunaixsky</a></p>
+		<p class="material-h4" style="font-weight: bold;color: rgba(255,255,255,.2) !important;padding-top: 0px;padding-bottom: 0px;margin-top: -10px;padding-left: 30px;">NULL Studio present</p>
+	</div>
+
+	<aside class="material-slide mt-amin" id="menu">
+		<div class="material-card" style="width: 100%;height:158px;background:url(img/mtl2.jpg) no-repeat;background-size: cover;">
+			<div class="mdt material-lh mt-txt-shadow">
+				Nullterial
+			</div>
+		</div>
+		<ul class="material-slider-ListView">
+			<li class="mt-amin">
+				<a class="mt-padding-thin ItemInner mt-amin ripple" href="#Spinner">
+					Spinner
+					<b class="material-caret mt-amin"></b>
+				</a>
+				<ul class="material-slider-ListView-subList mt-amin">
+					<li class="mt-padding-thin">
+						<a href="#spinner_usage128" class="ripple">
+							Usage of 128px
+						</a>
+					</li>
+					<li class="mt-padding-thin">
+						<a href="#spinner_usage64" class="ripple">
+							Usage of 64px
+						</a>
+					</li>
+					<li class="mt-padding-thin">
+						<a href="#spinner_usage32" class="ripple">
+							Usage of 32px
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li class="mt-amin">
+				<a class="mt-padding-thin ItemInner mt-amin ripple" href="#Horizontal">
+					Horizontal Progressbar
+					<b class="material-caret mt-amin"></b>
+				</a>
+				<ul class="material-slider-ListView-subList mt-amin">
+					<li class="mt-padding-thin">
+						<a href="#Indetermination" class="ripple">
+							Usage of Indetermination
+						</a>
+					</li>
+					<li class="mt-padding-thin">
+						<a href="#Determination" class="ripple">
+							Usage of Determination
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li class="mt-amin">
+				<a class="mt-padding-thin ItemInner mt-amin ripple" href="#Dropdown">
+					Dropdown Box
+					<b class="material-caret mt-amin"></b>
+				</a>
+				<ul class="material-slider-ListView-subList mt-amin">
+					<li class="mt-padding-thin">
+						<a href="#dropbox_u" class="ripple">
+							Usage of Indetermination
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li class="mt-amin">
+				<a class="mt-padding-thin ItemInner mt-amin ripple" href="#Horizontal">
+					Dialog
+					<b class="material-caret mt-amin"></b>
+				</a>
+			</li>
+			<li class="mt-amin">
+				<a class="mt-padding-thin ItemInner mt-amin ripple" href="#Horizontal">
+					Switcher
+					<b class="material-caret mt-amin"></b>
+				</a>
+			</li>
+			<li class="mt-amin">
+				<a class="mt-padding-thin ItemInner mt-amin ripple" href="#Horizontal">
+					Expansion Panel
+					<b class="material-caret mt-amin"></b>
+				</a>
+			</li>
+		</ul>
+	</aside>
+	<div class="mt-slide-overlay mt-amin">
+	</div>
+	<div class="mt-overlay mt-amin">
+	</div>
+</body>
+</html>

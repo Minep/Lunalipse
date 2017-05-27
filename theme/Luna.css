@@ -1,0 +1,99 @@
+.material-view,body
+{
+	background-color: #333333;
+}
+.material-btn
+{
+	color: #fff;
+}
+.material-card,.material-dialog
+{
+	background: #424242;
+	color:#fff;
+}
+.material-card>div,span,a,b
+{
+	color: #fff;
+}
+.material-underline
+{
+	border-bottom: 1px solid rgba(255,255,255,.1)
+}
+.material-topline
+{
+	border-top: 1px solid rgba(255,255,255,.1)
+}
+.material-input
+{
+	color: #fff;
+	border-bottom: 1.5px solid rgba(255,255,255,.3);
+}
+.material-input:focus
+{
+	border-bottom: 1.5px solid rgba(0,150,136,1)
+}
+.material-dropdown
+{
+	background: rgba(0,0,0,.5);
+	color: #fff;
+}
+.material-dropbox
+{
+	background: rgba(0,0,0,.2);
+	padding: 10px 4px 10px 0px;
+}
+.material-dropbox-list
+{
+	background: #353535;
+	color: #fff;
+}
+.material-dropbox-list div
+{
+	color: #fff;
+}
+.material-dialog>.material-dia-ctn
+{
+	color:rgba(255,255,255,.5);
+	line-height: 1.5em;
+}
+.material-switch b
+{
+	background: #BDBDBD;
+}
+
+.material-ListItem
+{
+	background: rgba(0,0,0,.2);
+}
+.material-h3,.material-h2,.material-h,
+.material-lh,.material-xlh,.material-xxlh,
+.material-xxxlh,.material-slider-ListView>li>a,
+.material-slider-ListView-subList>li>a
+{
+	color:#fff;
+}
+.material-tbar
+{
+	background-color:#262626; 
+}
+.material-slide,.material-slider-ListView>li
+{
+	background-color: #303030;
+}
+.material-caret
+{
+	border-top: 4px solid rgba(255,255,255,.8);
+}
+.material-footer
+{
+	background: #262626;
+}
+.material-footer>p,a
+{
+	color: rgba(255,255,255,.8) !important;
+}
+
+.ripple:after
+{
+	background-image:radial-gradient(circle ,#fff 10%,transparent 10.01%);
+}
