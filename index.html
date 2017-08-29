@@ -62,9 +62,9 @@
 	</div>
 	<div class="material-card maincard md-head">
 		<div class="material-h mt-txt-shadow mdt">Nullterial - Way to Future</div>
-		<div class="material-roundButton mt-rdbtn-bottom rb" data-msg="Download Nullterial.css">
+		<a href="https://github.com/Null-Studio/Nullterial/releases" class="material-roundButton mt-rdbtn-bottom rb" data-msg="Download Nullterial.css">
 			<span class="mtic mtic-case-download"></span>
-		</div>
+		</a>
 	</div>
 	<div class="material-card container shadow-b-2p phscreen">
 		<div class="material-card material-h material-underline">
@@ -283,7 +283,7 @@
 		</div>
 	</div>
 
-	<div class="material-card shadow-b-2p container phscreen" id="dialog">
+	<div class="material-card shadow-b-2p container phscreen" id="Dialog">
 		<div class="material-h material-card">
 			Material Dialog
 		</div>
@@ -331,7 +331,7 @@
 				</a>
 			</div>
 		</div>
-		<div class="material-h3 material-card material-topline">
+		<div class="material-h3 material-card material-topline" id="dialog_u">
 			Usage of Material Dialog.
 		</div>
 		<div class="mt-padding-thin">
@@ -433,7 +433,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="material-card shadow-b-2p container phscreen" id="dialog">
+	<div class="material-card shadow-b-2p container phscreen" id="Switcher">
 		<div class="material-h material-card material-underline">
 			Material Switcher
 		</div>
@@ -449,7 +449,7 @@
 			<span>The Material switcher is now <span>off</span></span>
 			<span class="material-switch" id="mdsw3"><b></b></span>
 		</div>
-		<div class="material-h3 material-card material-topline">
+		<div class="material-h3 material-card material-topline" id="switcher_u">
 			Usage of Material Switcher.
 		</div>
 		<div class="mt-padding-thin">
@@ -508,7 +508,7 @@
 	
 
 	<div class="material-card shadow-b-2p container phscreen">
-		<div class="material-card material-h material-underline">
+		<div class="material-card material-h material-underline" id="Panel">
 			Material Expansion Panel / List
 		</div>
 		<div class="MD-ListContainer mdlc">
@@ -542,7 +542,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="material-h3 material-card material-topline">
+		<div class="material-h3 material-card material-topline" id="panel_u">
 			Usage for Expansion Panel / List
 		</div>
 		<div class="mt-padding-thin">
@@ -695,22 +695,43 @@
 				</ul>
 			</li>
 			<li class="mt-amin">
-				<a class="mt-padding-thin ItemInner mt-amin ripple" href="#Horizontal">
+				<a class="mt-padding-thin ItemInner mt-amin ripple" href="#Dialog">
 					Dialog
 					<b class="material-caret mt-amin"></b>
 				</a>
+				<ul class="material-slider-ListView-subList mt-amin">
+					<li class="mt-padding-thin">
+						<a href="#dialog_u" class="ripple">
+							Usage of Dialog
+						</a>
+					</li>
+				</ul>
 			</li>
 			<li class="mt-amin">
-				<a class="mt-padding-thin ItemInner mt-amin ripple" href="#Horizontal">
+				<a class="mt-padding-thin ItemInner mt-amin ripple" href="#Switcher">
 					Switcher
 					<b class="material-caret mt-amin"></b>
 				</a>
+				<ul class="material-slider-ListView-subList mt-amin">
+					<li class="mt-padding-thin">
+						<a href="#switcher_u" class="ripple">
+							Usage of Switcher
+						</a>
+					</li>
+				</ul>
 			</li>
 			<li class="mt-amin">
-				<a class="mt-padding-thin ItemInner mt-amin ripple" href="#Horizontal">
+				<a class="mt-padding-thin ItemInner mt-amin ripple" href="#Panel">
 					Expansion Panel
 					<b class="material-caret mt-amin"></b>
 				</a>
+				<ul class="material-slider-ListView-subList mt-amin">
+					<li class="mt-padding-thin">
+						<a href="#panel_u" class="ripple">
+							Usage of Switcher
+						</a>
+					</li>
+				</ul>
 			</li>
 		</ul>
 	</aside>
